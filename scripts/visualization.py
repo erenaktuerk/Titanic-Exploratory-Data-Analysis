@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
+import os
 import os
 charts_dir = 'results/charts'
 
@@ -95,3 +97,30 @@ def create_boxplots(data):
     plt.ylabel('Age')
     plt.savefig(f'{charts_dir}/boxplot_age_by_pclass.png') 
     plt.close()
+    
+def create_interactive_visualizations(data):
+    """
+    Creates interactive visualizations using Plotly and saves them as HTML files.
+    """
+    # Ensure the charts directory exists
+    charts_dir = 'results/charts'
+    if not os.path.exists(charts_dir):
+        os.makedirs(charts_dir)
+
+    # Interactive Distribution of Age (Histogram with Box marginal)
+    fig_age = px.histogram(data, x="Age", nbins=30, title="Interactive Distribution of Age", marginal="box")
+    fig_age.write_html(f'{charts_dir}/interactive_distribution_of_age.html')
+    fig_age.show()
+
+    # Interactive Survival Rate by Sex
+    # First, calculate the mean survival rate by Sex
+    survival_by_sex = data.groupby("Sex", as_index=False)["Survived"].mean()
+    fig_sex = px.bar(survival_by_sex, x="Sex", y="Survived", title="Interactive Survival Rate by Sex")
+    fig_sex.write_html(f'{charts_dir}/interactive_survival_rate_by_sex.html')
+    fig_sex.show()
+
+    # Interactive Survival Rate by Pclass
+    survival_by_pclass = data.groupby("Pclass", as_index=False)["Survived"].mean()
+    fig_pclass = px.bar(survival_by_pclass, x="Pclass", y="Survived", title="Interactive Survival Rate by Pclass")
+    fig_pclass.write_html(f'{charts_dir}/interactive_survival_rate_by_pclass.html')
+    fig_pclass.show()
