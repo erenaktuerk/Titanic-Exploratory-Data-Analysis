@@ -1,87 +1,138 @@
-# Titanic - Exploratory Data Analysis
+Titanic - Exploratory Data Analysis
 
-## Overview
-This project performs an exploratory data analysis (EDA) on the Titanic dataset, aiming to uncover insights about passenger survival rates based on various features, including age, sex, and class. The analysis helps understand patterns and correlations that influenced survival.
+🚀 Project Overview
 
-## Project Goals
-- Clean and preprocess the Titanic dataset.
-- Perform statistical analysis to summarize key features.
-- Visualize important patterns and relationships between variables.
-- Generate actionable insights that could help improve survival prediction models.
+This project is a comprehensive Exploratory Data Analysis (EDA) on the well-known Titanic dataset, designed to uncover insights about passenger survival rates based on various demographic and socio-economic features. With a clear focus on professionalism, problem-solving, and practical application, the project aims to explore patterns and relationships that influenced survival outcomes — insights crucial for building accurate predictive models.
 
-## Tools and Libraries Used
-- *Python*: The primary programming language used for the project.
-- *Pandas*: For data manipulation and preprocessing.
-- *Matplotlib*: For creating static, animated, and interactive visualizations.
-- *Seaborn*: For statistical data visualization.
-- *NumPy*: For handling numerical operations and array manipulations.
+In the latest version, the project has been enhanced with interactive visualizations, advanced data exploration techniques, and a robust logging system to ensure transparency, traceability, and maintainability of the analysis pipeline.
 
-## Dataset
-The dataset used for this project contains the details of passengers aboard the Titanic. It includes features like:
-- PassengerId
-- Survived (0 = No, 1 = Yes)
-- Pclass (Ticket class)
-- Name
-- Sex
-- Age
-- SibSp (Siblings and spouses aboard)
-- Parch (Parents and children aboard)
-- Ticket
-- Fare
-- Cabin
-- Embarked (Port of embarkation)
+🎯 Project Goals
+	•	Data Cleaning & Preprocessing: Handle missing values, format data, and prepare it for analysis.
+	•	Statistical Analysis: Summarize key numerical and categorical features.
+	•	Exploratory Data Analysis (EDA): Identify patterns, trends, and relationships influencing survival rates.
+	•	Advanced Visualizations:
+	•	Static Visualizations: Histograms, box plots, and correlation heatmaps.
+	•	Interactive Visualizations: Dynamic charts for deeper insights and user engagement.
+	•	Logging System Implementation: Ensure detailed tracking of each processing step for full transparency.
+	•	Actionable Insights: Draw meaningful conclusions that could enhance predictive model performance.
 
-The dataset is provided in CSV format and is loaded from the data/raw folder.
+🛠️ Tools & Libraries Used
+	•	Programming Language: 🐍 Python — Ideal for data analysis and machine learning projects.
+	•	Data Manipulation: pandas — For efficient data cleaning and transformation.
+	•	Numerical Operations: numpy — For array operations and mathematical functions.
+	•	Statistical Analysis: seaborn — For creating informative statistical visualizations.
+	•	Data Visualization:
+	•	matplotlib — For static visualizations like histograms and heatmaps.
+	•	plotly — For interactive, drill-down charts that enhance user experience.
+	•	Logging: logging — Tracks key processing steps, aiding in debugging and transparency.
+	•	Containerization: Docker — Ensures a consistent development and deployment environment.
 
-## Steps Taken in the Project
-1. *Data Loading*: Load and inspect the raw dataset.
-2. *Data Cleaning*: Handle missing values, preprocess the data for analysis.
-3. *Exploratory Data Analysis (EDA)*:
-   - Descriptive statistics for numerical and categorical features.
-   - Analysis of survival rates based on different variables.
-   - Correlation analysis.
-4. *Data Visualization*:
-   - Histograms, bar plots, box plots, and heatmaps to visualize relationships and distributions.
-   - Saving visualizations as PNG files to results/charts.
+🗂 Dataset Description
 
-## Running the Project
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/erenaktuerk/Titanic-Exploratory-Data-Analysis.git
+The Titanic dataset contains information on passengers aboard the Titanic, including:
 
-	2.	Navigate to the project folder:
+Feature	Description
+PassengerId	Unique ID for each passenger
+Survived	Survival status (0 = No, 1 = Yes)
+Pclass	Ticket class (1st, 2nd, 3rd)
+Name	Passenger’s full name
+Sex	Gender
+Age	Age of the passenger
+SibSp	# of siblings/spouses aboard
+Parch	# of parents/children aboard
+Ticket	Ticket number
+Fare	Ticket fare
+Cabin	Cabin number
+Embarked	Port of embarkation
 
-cd Titanic-Exploratory-Data-Analysis
+📈 Steps Taken in the Project
 
+1️⃣ Data Loading:
+	•	Load and inspect the raw dataset from data/raw/.
 
-	3.	Install the required dependencies:
+2️⃣ Data Cleaning & Preprocessing:
+	•	Handle missing values (Age, Cabin, Embarked).
+	•	Transform categorical data for consistency and usability.
+	•	Save the cleaned dataset in data/cleaned_data/cleaned_data.csv.
 
-pip install -r requirements.txt
+3️⃣ Exploratory Data Analysis (EDA):
+	•	Generate descriptive statistics.
+	•	Analyze survival rates across different passenger classes, genders, and age groups.
+	•	Perform correlation analysis to assess feature relationships.
 
+4️⃣ Advanced Data Visualization:
+	•	Static Visualizations: Boxplots, heatmaps, and survival rate charts.
+	•	Interactive Visualizations:
+	•	interactive_distribution_of_age.html — Age distribution analysis.
+	•	interactive_survival_rate_by_pclass.html — Survival rate by class.
+	•	interactive_survival_rate_by_sex.html — Survival rate by gender.
 
-	4.	Run the main script to load the dataset, preprocess it, perform EDA, and generate visualizations:
+5️⃣ Logging Implementation:
+	•	Logs every critical step (data loading, cleaning, analysis, and visualization).
+	•	Logs stored in logs/ for traceability and debugging.
 
-python main.py
+6️⃣ Containerization (Optional):
+	•	Dockerfile provided for seamless deployment and consistent environments.
 
-
-
-Folder Structure
+🏗 Folder Structure
 
 Titanic-Exploratory-Data-Analysis/
 │
-├── data/                          # Folder for raw and cleaned data
-│   ├── raw/                       # Raw input data (Titanic dataset CSV)
-│   ├── cleaned_data/              # Cleaned data (cleaned_data.csv)
+├── data/                          # Dataset folder
+│   ├── raw/                       # Raw dataset
+│   ├── cleaned_data/              # Cleaned and preprocessed data
 │
-├── scripts/                       # Python scripts for data processing and analysis
-│   ├── data_preprocessing.py      # Script for cleaning the data
-│   ├── analysis.py                # Script for performing EDA and statistical analysis
-│   ├── visualization.py           # Script for generating visualizations
+├── results/                       # Analysis and visual results
+│   ├── charts/                    # Static and interactive visualizations
+│   ├── summary_statistics.txt     # Key data insights and analysis results
 │
-├── results/                       # Folder for results and saved visualizations
-│   ├── charts/                    # Exported charts (PNG images)
-│   └── summary_statistics.txt     # Summary of statistics and analysis
+├── scripts/                       # Python scripts for modular functionality
+│   ├── data_processing.py         # Data cleaning and preparation
+│   ├── analysis.py                # Exploratory data analysis
+│   ├── visualization.py           # Static and interactive visualizations
 │
-├── README.md                      # Project documentation
-├── requirements.txt               # List of required Python dependencies
-└── main.py                        # Main script to run the entire project
+├── logs/                          # Logs for debugging and process tracking
+│
+├── Dockerfile                     # Containerization configuration
+├── requirements.txt               # Python dependencies
+├── main.py                        # Main entry point for the project
+└── README.md                      # Project documentation
+
+▶️ How to Run the Project
+
+1️⃣ Clone the Repository:
+
+git clone https://github.com/erenaktuerk/Titanic-Exploratory-Data-Analysis.git
+
+2️⃣ Navigate to the Project Directory:
+
+cd Titanic-Exploratory-Data-Analysis
+
+3️⃣ Install Dependencies:
+
+pip install -r requirements.txt
+
+4️⃣ Run the Main Script:
+
+python main.py
+
+5️⃣ (Optional) Run with Docker:
+
+docker build -t titanic-eda .
+docker run -p 8050:8050 titanic-eda
+
+🌐 Interactive Visualizations
+
+Once the project runs successfully, you can explore interactive charts stored in the results/charts/ folder by opening .html files directly in your browser.
+
+📝 Future Improvements
+	•	Advanced Feature Engineering for more robust survival predictions.
+	•	Machine Learning Model Integration to predict survival based on explored insights.
+	•	Deployment of an Interactive Dashboard using frameworks like Dash or Streamlit.
+
+💡 Key Takeaways
+	•	Enhanced Analytical Depth: Through advanced visualizations and exploratory techniques.
+	•	Improved Transparency: By implementing a well-structured logging system.
+	•	Real-World Relevance: Gained actionable insights that can inform future survival prediction models.
+
+Let’s take Titanic EDA to the next level! 🚢💡
